@@ -1,0 +1,29 @@
+def play_game(player_choice)
+  choices = ["Stone", "Paper", "Scissors"]
+  computer_choice = choices.sample
+
+  puts "Player chose: #{player_choice}"
+  puts "Computer chose: #{computer_choice}"
+
+  if player_choice == computer_choice
+    puts "It's a tie!"
+  elsif (player_choice == "Stone" && computer_choice == "Scissors") ||
+        (player_choice == "Paper" && computer_choice == "Stone") ||
+        (player_choice == "Scissors" && computer_choice == "Paper")
+    puts "You win!"
+  else
+    puts "You lose!"
+  end
+end
+
+if ARGV.length != 1
+  puts "Usage: ruby game.rb <choice>"
+else
+  player_choice = ARGV[0].capitalize
+  unless ["Stone", "Paper", "Scissors"].include?(player_choice)
+    puts "Invalid choice. Please choose from Stone, Paper, or Scissors."
+    exit
+  end
+
+  play_game(player_choice)
+end
