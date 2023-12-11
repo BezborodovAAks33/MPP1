@@ -4,8 +4,8 @@ def play_game(player_choice, computer_choice)
 
   if player_choice == computer_choice
     puts "It's a tie!"
-  elsif (player_choice == "Stone" && computer_choice == "Scissors") ||
-        (player_choice == "Paper" && computer_choice == "Stone") ||
+  elsif (player_choice == "Rock" && computer_choice == "Scissors") ||
+        (player_choice == "Paper" && computer_choice == "Rock") ||
         (player_choice == "Scissors" && computer_choice == "Paper")
     puts "You win!"
   else
